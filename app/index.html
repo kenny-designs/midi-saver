@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Midi Saver</title>
     <h1>Midi Saver</h1>
@@ -30,14 +31,14 @@
 
         <input id="midi-file" type="file" class="input-file" accept=".MID">
         <label for="midi-file">Select Midi</label>
+        <button type="button" id="play-btn">
+            <i class="fa fa-play"></i>
+        </button>
     </div>
 
     <div id="player-buttons">
-        <h2>Record and Export</h2>
+        <h2>Export</h2>
 
-        <button type="button" id="record-btn">Record</button>
-        <button type="button" id="play-btn">Play</button>
-        <button type="button" id="stop-btn">Stop Record</button>
         <button type="button" id="export-btn">Export</button>
     </div>
 
