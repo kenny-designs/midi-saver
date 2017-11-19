@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+
+    <title>Midi Saver</title>
+    <h1>Midi Saver</h1>
+
+</head>
+<body>
+
+    <div id="instrum-box">
+        <h2>Select an Instrument</h2>
+
+        <select id="instrum-select">
+            <option value="acoustic_grand_piano">Piano</option>
+            <option value="koto">Koto</option>
+            <option value="banjo">Banjo</option>
+            <option value="clavinet">Clavinet</option>
+            <option value="harpsichord">Harpsichord</option>
+            <option value="seashore">Other</option>
+        </select>
+    </div>
+
+    <div id="upload-box">
+        <h2>Upload a Midi</h2>
+
+        <input id="midi-file" type="file" class="input-file" accept=".MID">
+        <label for="midi-file">Select Midi</label>
+    </div>
+
+    <div id="player-buttons">
+        <h2>Record and Export</h2>
+
+        <button type="button" id="record-btn">Record</button>
+        <button type="button" id="play-btn">Play</button>
+        <button type="button" id="stop-btn">Stop Record</button>
+        <button type="button" id="export-btn">Export</button>
+    </div>
+
+<script language="javascript" type="text/javascript" src="js/LT.js"></script>
+
+</body>
+</html>
