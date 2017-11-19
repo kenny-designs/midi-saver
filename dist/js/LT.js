@@ -50,23 +50,11 @@ class Main {
         this.midiFile.addEventListener('change', function(event) {
             this.convert.loadMidi(this.midiFile.files[0]);
             this.midiSlug = this.midiFile.files[0].name;
-            // trim
+            // trim filename
             this.midiSlug = this.midiSlug.replace(/\.[^/.]+$/, '');
         }.bind(this));
 
-        // set up record
-        this.recordButton = document.getElementById('record-btn');
-        this.recordButton.addEventListener('click', function(event) {
-            this.rec.record();
-        }.bind(this));
-
-        // set up stop recording
-        this.stopButton = document.getElementById('stop-btn');
-        this.stopButton.addEventListener('click', function(event) {
-            this.rec.stop();
-        }.bind(this));
-
-        // set up play button for playing C4 note
+        // set up play button for playing notes
         this.playButton = document.getElementById('play-btn');
         this.playButton.addEventListener('click', function(event) {
             this.playInstrum();
@@ -75,15 +63,7 @@ class Main {
         // export button
         this.exportButton = document.getElementById('export-btn');
         this.exportButton.addEventListener('click', function(event) {
-            this.rec.exportWAV(function(e) {
-                this.rec.clear();
-                var anchor = document.createElement('a');
-                document.body.appendChild(anchor);
-
-                anchor.href = window.URL.createObjectURL(e);
-                anchor.download = this.midiSlug +'.wav';
-                anchor.click();
-            }.bind(this));
+            this.recInstrum();
         }.bind(this));
 
         this.init();
@@ -101,9 +81,31 @@ class Main {
             console.log('Instrum still loading...');
         }
         else {
-            console.log('Playing...');
-            this.instrum.schedule(this.ac.currentTime, this.notes);
+            return this.instrum.schedule(this.ac.currentTime, this.notes);
         }
+    }
+
+    // records the midi
+    recInstrum() {
+        this.rec.record();
+        var node = this.playInstrum();
+        node[node.length - 1].source.onended = function(event) {
+            this.rec.stop();
+            this.exportInstrum();
+        }.bind(this);
+    }
+
+    // exports the midi
+    exportInstrum() {
+         this.rec.exportWAV(function(e) {
+                this.rec.clear();
+                var anchor = document.createElement('a');
+                document.body.appendChild(anchor);
+
+                anchor.href = window.URL.createObjectURL(e);
+                anchor.download = this.midiSlug +'.wav';
+                anchor.click();
+            }.bind(this));
     }
 
     // loads an instrument
