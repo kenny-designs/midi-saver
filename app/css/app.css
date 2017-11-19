@@ -1,0 +1,70 @@
+h1 {
+    text-align: center;
+    margin: auto;
+    padding: 10px 50px 10px 50px;
+    display: block;
+}
+
+h2 {
+    font-weight: normal;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+#instrum-box select {
+    background-color: #4caf50;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 150px;
+    cursor: pointer;
+    display: block;
+}
+
+#instrum-box select:hover {
+    background-color: #427244;
+}
+
+#upload-box label {
+    font-size: 1.25em;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #4caf50;
+    text-align: center;
+    margin: 10px auto;
+    width: 125px;
+    cursor: pointer;
+    display: block;
+}
+
+#upload-box label:hover {
+    background-color: #427244;
+}
+
+#player-buttons button {
+    background-color: #4caf50;
+    color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    margin: 10px auto;
+    width: 200px;
+    cursor: pointer;
+    display: block;
+}
+
+#player-buttons button:hover {
+    background-color: #427244;
+}
+
+.input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

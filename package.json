@@ -1,0 +1,33 @@
+{
+  "name": "midi-saver",
+  "version": "1.0.0",
+  "description": "Web app for exporting midi filefrom a variety of instruments",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "midi",
+    "saver",
+    "convert",
+    "soundfont",
+    "wav",
+    "export",
+    "save"
+  ],
+  "author": "Alexander M. Aguilar",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^14.5.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-preprocess": "^2.0.0",
+    "gulp-streamify": "^1.0.2",
+    "midiconvert": "^0.4.2",
+    "recorderjs": "^1.0.1",
+    "soundfont-player": "^0.10.6",
+    "vinyl-source-stream": "^1.1.0",
+    "workerify": "^1.1.0",
+    "workify": "0.0.5"
+  }
+}
